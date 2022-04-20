@@ -1,0 +1,31 @@
+package racingcar.domain;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class CarTest {
+	@DisplayName("자동차를 생성한다")
+	@ParameterizedTest
+	@ValueSource(strings = {"gunan", "k"})
+	void createTest(String name) {
+		assertThat(Car.nameOf(name)).isNotNull();
+	}
+
+	@DisplayName("이름이 같으면 같은 자동차이다")
+	@ParameterizedTest
+	@ValueSource(strings = {"gunan", "k"})
+	void equalsTest(String name) {
+		assertThat(Car.nameOf(name)).isEqualTo(Car.nameOf(name));
+	}
+
+	@DisplayName("이름이 다르면 다른 자동차이다")
+	@ParameterizedTest
+	@CsvSource(value = {"gunan,lee", "k,a"})
+	void notEqualsTest(String name, String differentName) {
+		assertThat(Car.nameOf(name)).isNotEqualTo(Car.nameOf(differentName));
+	}
+}
