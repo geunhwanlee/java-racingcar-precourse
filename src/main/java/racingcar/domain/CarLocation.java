@@ -3,6 +3,7 @@ package racingcar.domain;
 import java.util.Objects;
 
 public class CarLocation {
+	private static final char LOCATION_SYMBOL = '-';
 	private final int location;
 
 	public CarLocation(int location) {
@@ -23,5 +24,14 @@ public class CarLocation {
 	@Override
 	public int hashCode() {
 		return Objects.hash(location);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < location; i++) {
+			builder.append(LOCATION_SYMBOL);
+		}
+		return builder.toString();
 	}
 }
