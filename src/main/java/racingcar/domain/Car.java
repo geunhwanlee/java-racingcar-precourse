@@ -3,14 +3,17 @@ package racingcar.domain;
 import java.util.Objects;
 
 public class Car {
+	private static final CarLocation INITIAL_LOCATION = new CarLocation(0);
 	private final CarName carName;
+	private CarLocation carLocation;
 
-	private Car(CarName carName) {
+	private Car(CarName carName, CarLocation carLocation) {
 		this.carName = carName;
+		this.carLocation = carLocation;
 	}
 
 	public static Car of(String name) {
-		return new Car(new CarName(name));
+		return new Car(new CarName(name), INITIAL_LOCATION);
 	}
 
 	@Override
