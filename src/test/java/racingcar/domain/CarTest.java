@@ -12,20 +12,20 @@ public class CarTest {
 	@ParameterizedTest
 	@ValueSource(strings = {"gunan", "k"})
 	void createTest(String name) {
-		assertThat(Car.nameOf(name)).isNotNull();
+		assertThat(Car.of(name)).isNotNull();
 	}
 
 	@DisplayName("이름이 같으면 같은 자동차이다")
 	@ParameterizedTest
 	@ValueSource(strings = {"gunan", "k"})
 	void equalsTest(String name) {
-		assertThat(Car.nameOf(name)).isEqualTo(Car.nameOf(name));
+		assertThat(Car.of(name)).isEqualTo(Car.of(name));
 	}
 
 	@DisplayName("이름이 다르면 다른 자동차이다")
 	@ParameterizedTest
 	@CsvSource(value = {"gunan,lee", "k,a"})
 	void notEqualsTest(String name, String differentName) {
-		assertThat(Car.nameOf(name)).isNotEqualTo(Car.nameOf(differentName));
+		assertThat(Car.of(name)).isNotEqualTo(Car.of(differentName));
 	}
 }

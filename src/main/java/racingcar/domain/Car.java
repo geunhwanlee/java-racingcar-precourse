@@ -9,7 +9,7 @@ public class Car {
 		this.carName = carName;
 	}
 
-	public static Car nameOf(String name) {
+	public static Car of(String name) {
 		return new Car(new CarName(name));
 	}
 
