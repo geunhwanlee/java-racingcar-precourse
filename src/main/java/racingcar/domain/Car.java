@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Car {
 	private static final CarLocation INITIAL_LOCATION = new CarLocation(0);
+	private static final String NAME_LOCATION_SEPARATOR = " : ";
 	private final CarName carName;
 	private CarLocation carLocation;
 
@@ -41,5 +42,10 @@ public class Car {
 	@Override
 	public int hashCode() {
 		return Objects.hash(carName);
+	}
+
+	@Override
+	public String toString() {
+		return carName + NAME_LOCATION_SEPARATOR + carLocation;
 	}
 }

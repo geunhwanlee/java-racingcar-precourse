@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Cars {
+	private static final String BREAK_LINE = "\n";
 	private final List<Car> cars;
 
 	private Cars(List<Car> cars) {
@@ -31,5 +32,15 @@ public class Cars {
 		for (Car car : cars) {
 			car.move(movable);
 		}
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		for (Car car : cars) {
+			builder.append(car);
+			builder.append(BREAK_LINE);
+		}
+		return builder.toString();
 	}
 }
