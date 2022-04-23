@@ -10,6 +10,9 @@ public class Cars {
 	private final List<Car> cars;
 
 	private Cars(List<Car> cars) {
+		if (!isUnique(cars)) {
+			throw new IllegalArgumentException("중복된 자동차가 존재합니다.");
+		}
 		this.cars = Collections.unmodifiableList(cars);
 	}
 
@@ -18,13 +21,10 @@ public class Cars {
 		for (String name : names) {
 			cars.add(Car.of(name));
 		}
-		if (!isUnique(cars)) {
-			throw new IllegalArgumentException("중복된 자동차가 존재합니다.");
-		}
 		return new Cars(cars);
 	}
 
-	private static boolean isUnique(List<Car> cars) {
+	private boolean isUnique(List<Car> cars) {
 		return new HashSet<>(cars).size() == cars.size();
 	}
 
