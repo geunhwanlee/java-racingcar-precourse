@@ -2,7 +2,7 @@ package racingcar.domain;
 
 import java.util.Objects;
 
-public class CarLocation {
+public class CarLocation implements Comparable<CarLocation> {
 	private static final char LOCATION_SYMBOL = '-';
 	private final int location;
 
@@ -37,5 +37,10 @@ public class CarLocation {
 			builder.append(LOCATION_SYMBOL);
 		}
 		return builder.toString();
+	}
+
+	@Override
+	public int compareTo(CarLocation o) {
+		return location - o.location;
 	}
 }

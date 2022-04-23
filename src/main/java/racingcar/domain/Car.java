@@ -22,6 +22,14 @@ public class Car {
 		}
 	}
 
+	public boolean win(Car that) {
+		return carLocation.compareTo(that.carLocation) > 0;
+	}
+
+	public boolean draw(Car that) {
+		return carLocation.compareTo(that.carLocation) == 0;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

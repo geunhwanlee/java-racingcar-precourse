@@ -30,4 +30,12 @@ public class CarLocationTest {
 		CarLocation one = new CarLocation(1);
 		assertThat(zero.increase()).isEqualTo(one);
 	}
+
+	@DisplayName("자동차의 위치는 0보다 1이 더 크다")
+	@Test
+	void compareTest() {
+		CarLocation zero = new CarLocation(0);
+		CarLocation one = new CarLocation(1);
+		assertThat(one).isGreaterThan(zero);
+	}
 }
