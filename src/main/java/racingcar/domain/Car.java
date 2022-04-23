@@ -16,6 +16,12 @@ public class Car {
 		return new Car(new CarName(name), INITIAL_LOCATION);
 	}
 
+	public void move(Movable movable) {
+		if (movable.forward()) {
+			carLocation = carLocation.increase();
+		}
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

@@ -22,4 +22,12 @@ public class CarLocationTest {
 		assertThatThrownBy(() -> new CarLocation(-1))
 				.isInstanceOf(IllegalArgumentException.class);
 	}
+
+	@DisplayName("자동차의 위치가 0에서 한번 증가하면 1과 같다")
+	@Test
+	void addTest() {
+		CarLocation zero = new CarLocation(0);
+		CarLocation one = new CarLocation(1);
+		assertThat(zero.increase()).isEqualTo(one);
+	}
 }

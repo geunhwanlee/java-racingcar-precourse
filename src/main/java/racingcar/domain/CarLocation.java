@@ -13,6 +13,10 @@ public class CarLocation {
 		this.location = location;
 	}
 
+	public CarLocation increase() {
+		return new CarLocation(location + 1);
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
