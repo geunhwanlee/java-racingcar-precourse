@@ -26,4 +26,10 @@ public class Cars {
 	private static boolean isUnique(List<Car> cars) {
 		return new HashSet<>(cars).size() == cars.size();
 	}
+
+	public void moveAll(Movable movable) {
+		for (Car car : cars) {
+			car.move(movable);
+		}
+	}
 }
