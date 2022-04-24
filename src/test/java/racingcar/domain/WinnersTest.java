@@ -8,8 +8,8 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class WinnersTest {
-	private static final Movable FORWARD = () -> true;
-	private static final Movable STOP = () -> false;
+	private static final MoveStrategy FORWARD = () -> true;
+	private static final MoveStrategy STOP = () -> false;
 
 	@DisplayName("우승자를 출력한다")
 	@Test

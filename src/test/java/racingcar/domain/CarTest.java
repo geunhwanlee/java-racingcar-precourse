@@ -9,8 +9,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarTest {
-	private static final Movable FORWARD = () -> true;
-	private static final Movable STOP = () -> false;
+	private static final MoveStrategy FORWARD = () -> true;
+	private static final MoveStrategy STOP = () -> false;
 
 	@DisplayName("자동차를 생성한다")
 	@ParameterizedTest

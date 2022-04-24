@@ -7,21 +7,21 @@ import org.junit.jupiter.api.Test;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RandomMoveTest {
+public class RandomMoveStrategyTest {
 	private static final int MOVING_FORWARD = 4;
 	private static final int STOP = 3;
-	private RandomMove randomMove;
+	private RandomMoveStrategy strategy;
 
 	@BeforeEach
 	void setUp() {
-		randomMove = new RandomMove();
+		strategy = new RandomMoveStrategy();
 	}
 
 	@DisplayName("전진한다")
 	@Test
 	void forwardTest() {
 		assertRandomNumberInRangeTest(
-				() -> assertThat(randomMove.forward()).isTrue(),
+				() -> assertThat(strategy.movable()).isTrue(),
 				MOVING_FORWARD
 		);
 	}
@@ -30,7 +30,7 @@ public class RandomMoveTest {
 	@Test
 	void stopTest() {
 		assertRandomNumberInRangeTest(
-				() -> assertThat(randomMove.forward()).isFalse(),
+				() -> assertThat(strategy.movable()).isFalse(),
 				STOP
 		);
 	}

@@ -28,9 +28,9 @@ public class Cars {
 		return new HashSet<>(cars).size() == cars.size();
 	}
 
-	public void moveAll(Movable movable) {
+	public void moveAll(MoveStrategy strategy) {
 		for (Car car : cars) {
-			car.move(movable);
+			car.move(strategy);
 		}
 	}
 

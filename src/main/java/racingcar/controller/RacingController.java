@@ -1,13 +1,13 @@
 package racingcar.controller;
 
 import racingcar.domain.Cars;
-import racingcar.domain.Movable;
-import racingcar.domain.RandomMove;
+import racingcar.domain.MoveStrategy;
+import racingcar.domain.RandomMoveStrategy;
 import racingcar.domain.TryCount;
 import racingcar.view.RacingView;
 
 public class RacingController {
-	private static final Movable MOVE_STRATEGY = new RandomMove();
+	private static final MoveStrategy MOVE_STRATEGY = new RandomMoveStrategy();
 
 	public void race() {
 		Cars cars = getCars();

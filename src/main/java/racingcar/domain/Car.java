@@ -17,8 +17,8 @@ public class Car {
 		return new Car(new CarName(name), INITIAL_LOCATION);
 	}
 
-	public void move(Movable movable) {
-		if (movable.forward()) {
+	public void move(MoveStrategy strategy) {
+		if (strategy.movable()) {
 			carLocation = carLocation.increase();
 		}
 	}

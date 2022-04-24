@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CarsTest {
-	private static final Movable FORWARD = () -> true;
-	private static final Movable STOP = () -> false;
+	private static final MoveStrategy FORWARD = () -> true;
+	private static final MoveStrategy STOP = () -> false;
 
 	@DisplayName("자동차의 일급컬렉션을 생성한다")
 	@Test
