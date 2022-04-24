@@ -19,8 +19,12 @@ public class CarLocation implements Comparable<CarLocation> {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 		CarLocation that = (CarLocation) o;
 		return location == that.location;
 	}
