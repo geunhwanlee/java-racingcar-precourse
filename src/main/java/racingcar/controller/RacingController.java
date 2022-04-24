@@ -17,6 +17,7 @@ public class RacingController {
 			cars.moveAll(MOVE_STRATEGY);
 			RacingView.showCars(cars);
 		});
+		RacingView.showWinners(cars.winners());
 	}
 
 	private Cars getCars() {
