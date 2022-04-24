@@ -1,7 +1,7 @@
 package racingcar.domain;
 
 public class TryCount {
-	int count;
+	private final int count;
 
 	public TryCount(String input) {
 		int count = parseInt(input);
@@ -17,6 +17,12 @@ public class TryCount {
 		}
 		catch (NumberFormatException e) {
 			throw new IllegalArgumentException("이동 횟수는 숫자만 입력 가능합니다.");
+		}
+	}
+
+	public void run(Runnable runnable) {
+		for (int i = 0; i < count; i++) {
+			runnable.run();
 		}
 	}
 }
