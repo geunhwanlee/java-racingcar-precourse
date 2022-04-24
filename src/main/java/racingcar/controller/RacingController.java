@@ -6,9 +6,29 @@ import racingcar.view.RacingView;
 
 public class RacingController {
 	public void race() {
-		String names = RacingView.inputNames();
-		Cars cars = Cars.of(names.split(","));
-		String input = RacingView.inputTryCount();
-		TryCount tryCount = new TryCount(input);
+		Cars cars = getCars();
+		TryCount tryCount = getTryCount();
+	}
+
+	private Cars getCars() {
+		try {
+			String names = RacingView.inputNames();
+			return Cars.of(names.split(","));
+		}
+		catch (IllegalArgumentException e) {
+			RacingView.showError(e.getMessage());
+			return getCars();
+		}
+	}
+
+	private TryCount getTryCount() {
+		try {
+			String input = RacingView.inputTryCount();
+			return new TryCount(input);
+		}
+		catch (IllegalArgumentException e) {
+			RacingView.showError(e.getMessage());
+			return getTryCount();
+		}
 	}
 }
