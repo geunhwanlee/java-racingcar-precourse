@@ -52,4 +52,11 @@ public class CarTest {
 		assertThat(doForward.win(doNothing)).isTrue();
 		assertThat(doNothing.win(doForward)).isFalse();
 	}
+
+	@DisplayName("자동차의 이름을 확인한다")
+	@ParameterizedTest
+	@ValueSource(strings = {"gunan", "k"})
+	void getNameTest(String name) {
+		assertThat(Car.of(name).name()).isEqualTo(name);
+	}
 }

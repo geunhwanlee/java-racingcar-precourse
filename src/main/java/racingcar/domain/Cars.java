@@ -34,6 +34,10 @@ public class Cars {
 		}
 	}
 
+	public Winners winners() {
+		return new WinnersFactory(cars).getWinners();
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

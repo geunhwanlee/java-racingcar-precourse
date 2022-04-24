@@ -31,6 +31,10 @@ public class Car {
 		return carLocation.compareTo(that.carLocation) == 0;
 	}
 
+	public String name() {
+		return carName.toString();
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
