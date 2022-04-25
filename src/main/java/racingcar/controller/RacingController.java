@@ -24,8 +24,7 @@ public class RacingController {
 		try {
 			String names = RacingView.inputNames();
 			return Cars.of(names.split(","));
-		}
-		catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			RacingView.showError(e.getMessage());
 			return getCars();
 		}
@@ -35,8 +34,7 @@ public class RacingController {
 		try {
 			String input = RacingView.inputTryCount();
 			return new TryCount(input);
-		}
-		catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			RacingView.showError(e.getMessage());
 			return getTryCount();
 		}

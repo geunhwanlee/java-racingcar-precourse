@@ -14,8 +14,7 @@ public class TryCount {
 	private int parseInt(String input) {
 		try {
 			return Integer.parseInt(input);
-		}
-		catch (NumberFormatException e) {
+		} catch (NumberFormatException e) {
 			throw new IllegalArgumentException("이동 횟수는 숫자만 입력 가능합니다.");
 		}
 	}
